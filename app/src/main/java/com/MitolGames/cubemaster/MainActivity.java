@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.MitolGames.cubemaster.models.User;
+import com.MitolGames.cubemaster.util.CubeView;
 import com.MitolGames.cubemaster.util.ScrambleGenerator;
 import com.auth0.android.jwt.JWT;
 
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private ScrambleGenerator sgr;
 
     States state;
+
+    CubeView cubeView;
 
     Button go_to_rest_btn;
     Button deleteAuth_btn;
@@ -91,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         go_to_rest_btn = findViewById(R.id.go_to_rest_btn2);
         startBtn = findViewById(R.id.button_start);
         stopBtn = findViewById(R.id.button_stop);
+        cubeView = findViewById(R.id.cubeView);
+
         stopBtn.setEnabled(false);
         state = States.NoCube;
         sgr = new ScrambleGenerator();
@@ -101,8 +107,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         go_to_rest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), RestActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getApplicationContext(), RestActivity.class);
+                //startActivity(intent);
+
+                ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) cubeView.getLayoutParams(); // получаем параметры
+                int MyHeight = 400; // желаемая высота, будет меняться по условиям
+                params.height = params.height+100; // меняем высоту. Если уползёт выравнивание, то imageView.getLayoutParams().width = MyHeight;
+                cubeView.setLayoutParams(params); // меняем параметр
+                cubeView.invalidate();
             }
         });
 
@@ -267,13 +279,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             RestTemplate restTemplate = new RestTemplate();
             restTemplate.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             ResponseEntity<User> response;
-            response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(headers),User.class);
-            return response.getBody();
+            try {
+                response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<Object>(headers), User.class);
+                return response.getBody();
+            }catch (RuntimeException e){
+                return null;
+            }
+
         }
 
         @Override
         protected void onPostExecute(User user) {
             super.onPostExecute(user);
+            if(user != null)
             userID = user.getId();
         }
     }

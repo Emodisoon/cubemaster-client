@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     CubeView cubeView;
 
-    Button go_to_rest_btn;
     Button deleteAuth_btn;
 
     Button startBtn;
@@ -92,31 +91,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         tv_timer = findViewById(R.id.tv_timer);
         tv_scrable = findViewById(R.id.scrable_tv);
         deleteAuth_btn = findViewById(R.id.delete_auth_btn);
-        go_to_rest_btn = findViewById(R.id.go_to_rest_btn2);
         startBtn = findViewById(R.id.button_start);
         stopBtn = findViewById(R.id.button_stop);
         cubeView = findViewById(R.id.cubeView);
 
         stopBtn.setEnabled(false);
         state = States.NoCube;
-        sgr = new ScrambleGenerator();
+        sgr = new ScrambleGenerator(5);
 
-
-
-        //Переход на страницу дебага запросов
-        go_to_rest_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(getApplicationContext(), RestActivity.class);
-                //startActivity(intent);
-
-                ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) cubeView.getLayoutParams(); // получаем параметры
-                int MyHeight = 400; // желаемая высота, будет меняться по условиям
-                params.height = params.height+100; // меняем высоту. Если уползёт выравнивание, то imageView.getLayoutParams().width = MyHeight;
-                cubeView.setLayoutParams(params); // меняем параметр
-                cubeView.invalidate();
-            }
-        });
 
         //Проверка наличия JWT
         sPrefs = getSharedPreferences("MyPref", MODE_PRIVATE);
@@ -184,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private void genNewScr(){
         scrambleString = sgr.GenerateScramble();
         tv_scrable.setText(scrambleString);
+        cubeView.ApplyScramble(sgr.getScramble());
     }
 
     //Лисенер показаний датчика

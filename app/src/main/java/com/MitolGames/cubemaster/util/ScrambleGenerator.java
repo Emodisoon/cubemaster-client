@@ -81,6 +81,10 @@ public class ScrambleGenerator {
 
     }
 
+    public Turn[] getScramble(){
+        return scramble;
+    }
+
 }
 
 class Turn{
@@ -94,6 +98,10 @@ class Turn{
     public Turn(int AxisIndex, String name){
         this.AxisIndex = AxisIndex;
         this.name = name;
+    }
+    public Turn(String name){
+        this.name = name;
+        this.AxisIndex = 0;
     }
 
     public String getName() {

@@ -1,193 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/side_nav_bar"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:paddingBottom="10dp"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button_stop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/stop_btn_bg"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/placeCubeHere"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/place_cube_bg"
-        android:gravity="top"
-        android:orientation="vertical"
-        android:paddingTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/toolbar_bg"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
-
-            <Button
-                android:id="@+id/toolbar_btn"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:background="@drawable/settings_icon"
-                android:padding="3dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/userName_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Секундомер"
-                android:textColor="@android:color/black"
-                android:textSize="25sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/toolbar_btn"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/scrable_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="32dp"
-            android:gravity="center"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="15dp"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="25sp"
-            tools:text="RUR`RUR`RUR`RUR`RUR`" />
-
-        <TextView
-            android:id="@+id/placeHere_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="center"
-            android:padding="5dp"
-            android:text="Положите сюда ваш кубик"
-            android:textColor="#646464"
-            android:textSize="25sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/records_layout"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/img_CubeView"
-        app:layout_constraintEnd_toStartOf="@+id/img_CubeView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/img_CubeView">
-
-
-        <TextView
-            android:id="@+id/best_Tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BEST: 00:05:25"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/avg5_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="AVG5: 00:05:25"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/avg12_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="AVG12: 00:05:25"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="00:00:00"
-        android:textColor="@android:color/black"
-        android:textSize="45sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeCubeHere"
-        app:layout_constraintVertical_bias="0.10" />
+    tools:context=".TimeRecordsDetails">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/img_CubeView"
+        android:id="@+id/CubeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/records_layout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/cubeview_2_17"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_16"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_17"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_14"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_2_14"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_13"
             app:srcCompat="@drawable/whit_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_14"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_1_14"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_13"
             app:srcCompat="@drawable/whit_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_14"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_0_5"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_13"
@@ -195,16 +51,16 @@
 
         <ImageView
             android:id="@+id/cubeview_1_13"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_2_13"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_12"
             app:srcCompat="@drawable/whit_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_13"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_0_4"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_12"
@@ -212,16 +68,16 @@
 
         <ImageView
             android:id="@+id/cubeview_0_12"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_1_12"
             app:layout_constraintStart_toStartOf="@+id/cubeview_1_12"
             app:srcCompat="@drawable/whit_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_12"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_0_3"
             app:layout_constraintStart_toStartOf="@+id/cubeview_0_3"
@@ -229,40 +85,40 @@
 
         <ImageView
             android:id="@+id/cubeview_1_12"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_2_12"
             app:layout_constraintStart_toStartOf="@+id/cubeview_2_12"
             app:srcCompat="@drawable/whit_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_2"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_1"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_1"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_11"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_10"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_10"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_10"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_9"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_10"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_9"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_8"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_9"
@@ -270,32 +126,32 @@
 
         <ImageView
             android:id="@+id/cubeview_1_11"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_10"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_11"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_10"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_9"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_10"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_11"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_10"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_11"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_9"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_8"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_9"
@@ -303,16 +159,16 @@
 
         <ImageView
             android:id="@+id/cubeview_0_10"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_9"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_9"
             app:srcCompat="@drawable/blue_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_9"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_8"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_8"
@@ -320,32 +176,32 @@
 
         <ImageView
             android:id="@+id/cubeview_2_8"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_7"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_8"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_8"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_7"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_8"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_7"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_6"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_7"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_6"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_5"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_6"
@@ -353,16 +209,16 @@
 
         <ImageView
             android:id="@+id/cubeview_1_7"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_6"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_7"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_6"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_5"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_6"
@@ -370,24 +226,24 @@
 
         <ImageView
             android:id="@+id/cubeview_0_8"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_7"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_7"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_7"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_6"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_6"
             app:srcCompat="@drawable/re_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_6"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_5"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_5"
@@ -395,24 +251,24 @@
 
         <ImageView
             android:id="@+id/cubeview_2_5"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_4"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_5"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_4"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_3"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_4"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_3"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_2"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_3"
@@ -420,8 +276,8 @@
 
         <ImageView
             android:id="@+id/cubeview_0_15"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             app:layout_constraintStart_toStartOf="@+id/cubeview_2_3"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_2_3"
@@ -429,8 +285,8 @@
 
         <ImageView
             android:id="@+id/cubeview_0_16"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_15"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_2_4"
@@ -438,24 +294,24 @@
 
         <ImageView
             android:id="@+id/cubeview_1_15"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toStartOf="@+id/cubeview_0_15"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_15"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_15"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toStartOf="@+id/cubeview_1_15"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_15"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_17"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginTop="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_16"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_2_5"
@@ -463,48 +319,48 @@
 
         <ImageView
             android:id="@+id/cubeview_1_16"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_15"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_16"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_17"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_16"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_17"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_16"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_15"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_16"
             app:srcCompat="@drawable/yellow_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_5"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_4"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_5"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_4"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_3"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_4"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_3"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_2"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_3"
@@ -512,16 +368,16 @@
 
         <ImageView
             android:id="@+id/cubeview_0_5"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_4"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_4"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_3"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_marginStart="2dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_2"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_2"
@@ -529,161 +385,146 @@
 
         <ImageView
             android:id="@+id/cubeview_0_4"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_3"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_3"
             app:srcCompat="@drawable/green_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_2"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_1"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_2"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_2"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_1"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_2"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_0"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_0"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_0"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_0"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_1_1"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_1_0"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_0_1"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_1"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_0"
             app:layout_constraintTop_toTopOf="@+id/cubeview_0_0"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_2_1"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintStart_toEndOf="@+id/cubeview_2_0"
             app:layout_constraintTop_toBottomOf="@+id/cubeview_1_1"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_0"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginTop="55dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="80dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/orange_tile" />
 
         <ImageView
             android:id="@+id/cubeview_0_13"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             app:layout_constraintBottom_toTopOf="@+id/cubeview_1_13"
             app:layout_constraintStart_toEndOf="@+id/cubeview_0_12"
             app:srcCompat="@drawable/whit_tile" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
-        android:id="@+id/settings_layout"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/toolbar_bg"
-        android:orientation="vertical"
-        android:padding="3dp"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/placeCubeHere"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone">
-
-        <Button
-            android:id="@+id/records_btn"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Мои сборки" />
-
-        <Button
-            android:id="@+id/auth_btn"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Авторизация" />
-
-        <Button
-            android:id="@+id/settings_btn"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Настройки" />
-    </LinearLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/errorConnectionAlert"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="5dp"
         android:background="@drawable/toolbar_bg"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="gone">
-
-        <Button
-            android:id="@+id/confirmErrorBtn"
-            style="@android:style/Widget.Holo.Light.Button.Toggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@android:string/ok"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/trId_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Не удалось установить соединение с сервером. Ваши сборки не будут сохраняться."
+            android:text="TextView"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/scramble_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeDet_tv" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/timeDet_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateDet_tv" />
+
+    <TextView
+        android:id="@+id/dateDet_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

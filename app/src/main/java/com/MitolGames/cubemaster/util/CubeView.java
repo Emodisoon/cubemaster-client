@@ -5,7 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 public class CubeView extends View {
@@ -286,16 +285,16 @@ public class CubeView extends View {
     protected void onDraw(Canvas canvas) {
 
 
-        canvas.drawARGB(100, 201, 201, 201);
+        //canvas.drawARGB(100, 201, 201, 201);
         //Сетка
         {
             canvas.drawLine(25, 195, 25, 355, borderPaint);//Вертикальная
             canvas.drawLine(35 + RECT_WIDTH, 195, 35 + RECT_WIDTH, 355, borderPaint);//Вертикальная 2
             canvas.drawLine(85 + RECT_WIDTH, 195, 85 + RECT_WIDTH, 355, borderPaint);//Вертикальная 3
 
-            canvas.drawLine(135 + RECT_WIDTH, 55, 135 + RECT_WIDTH, 495, borderPaint);//Вертикальная 4 TODO: Сделать большой для белого
-            canvas.drawLine(185 + RECT_WIDTH, 55, 185 + RECT_WIDTH, 495, borderPaint);//Вертикальная 5 TODO: Сделать большой для белого
-            canvas.drawLine(235 + RECT_WIDTH, 55, 235 + RECT_WIDTH, 495, borderPaint);//Вертикальная 6 TODO: Сделать большой для белого
+            canvas.drawLine(135 + RECT_WIDTH, 55, 135 + RECT_WIDTH, 495, borderPaint);//Вертикальная 4 болшая
+            canvas.drawLine(185 + RECT_WIDTH, 55, 185 + RECT_WIDTH, 495, borderPaint);//Вертикальная 5 болшая
+            canvas.drawLine(235 + RECT_WIDTH, 55, 235 + RECT_WIDTH, 495, borderPaint);//Вертикальная 6 болшая
             canvas.drawLine(285 + RECT_WIDTH, 55, 285 + RECT_WIDTH, 495, borderPaint);//Вертикальная 7
             canvas.drawLine(335 + RECT_WIDTH, 195, 335 + RECT_WIDTH, 355, borderPaint);//Вертикальная 7
             canvas.drawLine(385 + RECT_WIDTH, 195, 385 + RECT_WIDTH, 355, borderPaint);//Вертикальная 7

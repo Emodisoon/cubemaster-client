@@ -3,10 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/side_nav_bar">
 
     <Button
         android:id="@+id/login_button"
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
         android:layout_width="233dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
@@ -19,6 +21,7 @@
 
     <Button
         android:id="@+id/reg_button"
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
         android:layout_width="233dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
@@ -31,6 +34,7 @@
 
     <Button
         android:id="@+id/skipAuth_button2"
+        style="@android:style/Widget.Holo.Light.Button.Toggle"
         android:layout_width="233dp"
         android:layout_height="54dp"
         android:layout_marginStart="8dp"
@@ -40,21 +44,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_button" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="8dp"
-        android:text="Авторизация"
-        android:textColor="@android:color/black"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/login_textR"
@@ -81,6 +70,21 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_textR" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="8dp"
+        android:text="Авторизация"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
